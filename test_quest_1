@@ -44,7 +44,7 @@ Body:
 }
 
 Пример запроса:
-Ссылка: https://api.vk.com/method/photos.createComment?owner_id=-tagesru&photo_id=210981032_457239017&message=Гуд%20Аватар!&access_token=abcde12345
+Ссылка: https://api.vk.com/method/photos.createComment?owner_id=tagesru&photo_id=210981032_457239017&message=Гуд%20Аватар!&access_token=abcde12345
 
 Через Postman:
 POST https://api.vk.com/method/photos.createComment
