@@ -1,0 +1,58 @@
+https://api.vk.com/method/photos.createComment?owner_id=ID_GRP&photo_id=ID_PHOTO&message=Text%20comment&access_token=access_token
+
+Получение информации:
+
+Примичание:
+
+ID_GRP - идентификатор группы.
+ID_PHOTO - идентификатор фотографии.
+Text%20comment - текст комментария.
+access_token - токен доступа ВКонтакте.
+
+Как узнать ID_GRP VK:
+Открыть страницу группы.
+Скопировать данные из адресной строки после "vk.com/".
+
+Как узнать ID_PHOTO VK:
+Открыть страницу группы.
+Навести курсор на фотографию. Либо Открыть фотографию.
+В подсказке или адресной строке скопировать число после "photo_id=".
+
+Как получить access_token VK:
+Открыть страницу авторизации: https://oauth.vk.com/authorize
+Указать след данные:
+client_id: Идентификатор приложения VK.
+redirect_uri: URL-адрес, на который будет перенаправлен пользователь.
+display: Тип отображения страницы авторизации. Использовать "page".
+scope: Список разрешений, которые запрашиваем. Для получения access_token указать разрешение offline.
+response_type: Тип ответа. Использовать: "code".
+Нажать кнопку "Разрешить".
+В адресной строке браузера появится код авторизации.
+Далее отправить POST-запрос на адрес: https://oauth.vk.com/access_token
+В запросе указав: client_id, client_secret, code, redirect_uri.
+В ответе на запрос будет access_token и дургая инфа.
+
+Создание запроса:
+POST https://api.vk.com/method/photos.createComment
+
+Body:
+{
+  "owner_id": "ID_GRP",
+  "photo_id": "ID_PHOTO",
+  "message": "Text%20comment",
+  "access_token": "access_token"
+}
+
+Пример запроса:
+Ссылка: https://api.vk.com/method/photos.createComment?owner_id=-tagesru&photo_id=210981032_457239017&message=Гуд%20Аватар!&access_token=abcde12345
+
+Через Postman:
+POST https://api.vk.com/method/photos.createComment
+
+Body:
+{
+  "owner_id": "tagesru",
+  "photo_id": "210981032_457239017",
+  "message": "Гуд%20Аватар",
+  "access_token": "abcde12345"
+}
